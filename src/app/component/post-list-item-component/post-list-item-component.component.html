@@ -1,0 +1,17 @@
+<li class="list-group-item" [class.bg-success]="loveIts==1" [class.bg-danger]="loveIts == -1">
+  <p class="h2 font-weight-bolder text-dark">
+    {{title}}
+  </p>
+  <p>
+    {{created_at | date: 'medium'}}
+  </p>
+  <p>
+    {{content}}
+  </p>
+  <button class="btn btn-success mr-2" (click)="loveIts=loveIts-1">
+    i love
+  </button>
+  <button class="btn btn-danger" (click)="loveIts=loveIts+1">
+    i dont love
+  </button>
+</li>
