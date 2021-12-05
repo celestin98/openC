@@ -1,17 +1,17 @@
-<li class="list-group-item" [class.bg-success]="loveIts==1" [class.bg-danger]="loveIts == -1">
-  <p class="h2 font-weight-bolder text-dark">
+<li class="list-group-item d-flex row" [class.bg-success]="loveIts==1" [class.bg-danger]="loveIts == -1">
+  <p class="h2 font-weight-bolder text-dark col-9">
     {{title}}
   </p>
-  <p>
-    {{created_at | date: 'medium'}}
+  <p class="col-3 align-self-end">
+    {{created_at | date: 'short'}}
   </p>
-  <p>
+  <p class="col-12">
     {{content}}
   </p>
-  <button class="btn btn-success mr-2" (click)="loveIts=loveIts-1">
+  <button class="btn btn-success mr-2 col-2" (click)="loveIts=loveIts-1">
     i love
   </button>
-  <button class="btn btn-danger" (click)="loveIts=loveIts+1">
+  <button  class="btn btn-danger col-2" (click)="loveIts=loveIts+1">
     i dont love
   </button>
 </li>
