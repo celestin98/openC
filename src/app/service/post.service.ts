@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Subject} from "rxjs";
 import {Post} from "../model/post";
 
@@ -14,7 +14,7 @@ export class PostService {
         ' non provident atque nam blanditiis provident vel voluptates facere eum quasi' +
         ' dignissimos possimus nesciunt. ',
       loveIts: 0,
-      created_at:Date.now()
+      created_at: Date.now()
     },
     {
       title: 'test2',
@@ -26,22 +26,26 @@ export class PostService {
       created_at: Date.now()
     }
   ]
-  postsubject= new Subject<any>();
-  emitPostSubject(){
-    this.postsubject.next(this.posts.slice());
+  postsubject = new Subject<any>();
+
+  emitPostSubject() {
+    return this.postsubject.next(this.posts.slice());
 
   }
+
   constructor() {
     this.emitPostSubject();
   }
 
-  addPost(post:any){
+  addPost(post: any) {
     this.posts.push(post);
     this.emitPostSubject();
   }
-  deletePost(post:any){
-    this.posts.splice(this.posts.indexOf(post),1);
+
+  deletePost(post: any) {
+    this.posts.splice(this.posts.indexOf(post), 1);
     this.emitPostSubject();
+    console.log(this.posts);
 
   }
 }

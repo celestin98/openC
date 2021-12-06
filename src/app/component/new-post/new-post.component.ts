@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
+import {PostService} from "../../service/post.service";
 
 @Component({
   selector: 'app-new-post',
@@ -12,13 +13,21 @@ export class NewPostComponent implements OnInit {
     content: new  FormControl('')
   })
 
-  constructor() { }
+  constructor(private postService:PostService) { }
 
   ngOnInit(): void {
   }
 
   submit(){
-    console.log(this.postForm.getRawValue())
+        this.postService.addPost(
+          {
+            title:this.postForm.getRawValue().title,
+            content: this.postForm.getRawValue().content,
+            loveIts: 0,
+            created_at: Date.now()
+          }
+        )
+          
   }
 
 }
