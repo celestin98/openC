@@ -7,6 +7,7 @@ import {NavBarComponent} from './component/nav-bar/nav-bar.component';
 import {Router, RouterModule, Routes} from "@angular/router";
 import { Exercice1Component } from './pages/exercice1/exercice1.component';
 import { Exervice2Component } from './pages/exervice2/exervice2.component';
+import { NewPostComponent } from './component/new-post/new-post.component';
 
 const router: Routes = [
   {path:'', redirectTo:'exercice1',pathMatch:'full'},
@@ -22,7 +23,8 @@ const router: Routes = [
     PostListItemComponentComponent,
     NavBarComponent,
     Exercice1Component,
-    Exervice2Component
+    Exervice2Component,
+    NewPostComponent
   ],
   imports: [
     BrowserModule,
