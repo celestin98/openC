@@ -1,17 +1,22 @@
-<li class="list-group-item d-flex row" [class.bg-success]="loveIts==1" [class.bg-danger]="loveIts == -1">
+<li class="list-group-item d-flex row" [class.bg-success]="post.loveIts==1" [class.bg-danger]="post.loveIts == -1">
   <p class="h2 font-weight-bolder text-dark col-9">
-    {{title}}
+    {{post.title}}
   </p>
   <p class="col-3 align-self-end">
-    {{created_at | date: 'short'}}
+    {{post.created_at | date: 'short'}}
   </p>
   <p class="col-12">
-    {{content}}
+    {{post.content}}
   </p>
-  <button class="btn btn-success mr-2 col-2" (click)="loveIts=loveIts-1">
-    i love
-  </button>
-  <button  class="btn btn-danger col-2" (click)="loveIts=loveIts+1">
-    i dont love
+  <div class="col-9">
+    <button class="btn btn-success mr-2 col-2" (click)="post.loveIts=post.loveIts-1">
+      i love
+    </button>
+    <button  class="btn btn-danger col-2" (click)="post.loveIts=post.loveIts+1">
+      i dont love
+    </button>
+  </div>
+  <button  class="btn-danger col-2 " (click)="deletepost()">
+    delete post
   </button>
 </li>
